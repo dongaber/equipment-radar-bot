@@ -1,0 +1,28 @@
+{
+  "name": "telegram-bot-bun",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "dev:webhook": "bun --watch src/bot/bot.ts",
+    "start": "bun src/index.ts",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "set:webhook": "bun scripts/set-webhook.ts",
+    "delete:webhook": "bun scripts/delete-webhook.ts",
+    "tunnel": "cloudflared tunnel --url http://localhost:3000"
+  },
+  "dependencies": {
+    "@prisma/client": "6",
+    "dotenv": "latest",
+    "grammy": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prisma": "6",
+    "typescript": "latest"
+  }
+}
